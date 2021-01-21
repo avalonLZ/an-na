@@ -3,8 +3,8 @@
 
 <head>
     <title>an-na</title>
-	<style type="text/css">
-		<!-- 背景图铺满屏幕 -->
+    <style type="text/css">
+        <!-- 背景图铺满屏幕 -->
         * {
             padding: 0;
             margin: 0;
@@ -25,23 +25,23 @@
             height: 100%;
         }
 
-		<!-- 艺术字体 -->
-		#interval_time-reflect-base{
-			color: palegreen;
-			-webkit-box-reflect:below 10px;
-		}
-		#interval_time {
-			width: 300px;
-			height: 200px;
-			background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
-			-webkit-text-fill-color: transparent;
-			-webkit-background-clip: text;
-			-webkit-background-size: 200% 100%; 
-			-webkit-animation: masked-animation 4s linear infinite;
-			font-size: 30px;
-		}
+        <!-- 艺术字体 -->
+        #interval_time-reflect-base{
+            color: palegreen;
+            -webkit-box-reflect:below 10px;
+        }
+        #interval_time {
+            width: 300px;
+            height: 200px;
+            background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-background-size: 200% 100%;
+            -webkit-animation: masked-animation 4s linear infinite;
+            font-size: 30px;
+        }
 }
-	</style>
+    </style>
 </head>
 
 <body>
@@ -59,34 +59,38 @@
 <div id="interval_time"></div>
 <script type="text/javascript">
 function interval_time_count(){
-	let meet_time_ms = new Date('2020/12/24 20:21:00');
-	let current_time_ms = new Date();
-	let interval_time_ms = current_time_ms - meet_time_ms;
-	let days = Math.floor(interval_time_ms / (24 * 3600 * 1000));
-	let leavel = interval_time_ms % (24 * 3600 * 1000);
-	let hours = Math.floor(leavel / (3600 * 1000));
-	let leavel2 = leavel % (3600 * 1000);
-	let minutes = Math.floor(leavel2 / (60 * 1000));
-	let leavel3 = leavel2 % (60 * 1000);
-	let second = parseInt(leavel3 / 1000);
-	return (days + "天" + hours + "时" + minutes + "分" + second +"秒");
+    let meet_time_ms = new Date('2020/12/24 20:21:00');
+    let current_time_ms = new Date();
+    let interval_time_ms = current_time_ms - meet_time_ms;
+    let days = Math.floor(interval_time_ms / (24 * 3600 * 1000));
+    let leavel = interval_time_ms % (24 * 3600 * 1000);
+    let hours = Math.floor(leavel / (3600 * 1000));
+    let leavel2 = leavel % (3600 * 1000);
+    let minutes = Math.floor(leavel2 / (60 * 1000));
+    let leavel3 = leavel2 % (60 * 1000);
+    let second = parseInt(leavel3 / 1000);
+    return (days + "天" + hours + "小时" + minutes + "分" + second +"秒");
 }
 function interval_run(){
-	document.getElementById("interval_time").innerHTML=interval_time_count()
+    document.getElementById("interval_time").innerHTML=interval_time_count()
 }
 setInterval(interval_run, 1000);
 
 function changePostion () {
-	let divTag = document.getElementById("float_img");
-	let x=Math.random() * 800;
-	let y=Math.random() * 700;
-	divTag.style.left=x+"px";
-	divTag.style.top= y+"px";
+    let divTag = document.getElementById("float_img");
+    let x=Math.random() * 800;
+    let y=Math.random() * 700;
+    divTag.style.left=x+"px";
+    divTag.style.top= y+"px";
 }
 setInterval(changePostion, 3000);
 </script>
 </td>
 </tr>
+<audio src="/audio/song.mp3" autoplay></audio>
+<!--
+<iframe src = "/audio/song.mp3" allow = "autoplay" hidden />
+-->
 </body>
 
 </html>
