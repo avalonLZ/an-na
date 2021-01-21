@@ -16,7 +16,7 @@
 
         body {
             background: #ebebeb;
-            background-image: url(/images/black_ground.jpeg);
+            background-image: url(/images/black.jpg);
             background-repeat: no-repeat;
             background-size: 100% 100%;
             background-position: center;
@@ -24,12 +24,65 @@
             height: auto !important;
             height: 100%;
         }
+
+		#interval_time-reflect-base{
+    color: palegreen;
+    -webkit-box-reflect:below 10px;
+}
+		#interval_time {
+			width: 300px;
+			height: 200px;
+			background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+			-webkit-background-size: 200% 100%; 
+			-webkit-animation: masked-animation 4s linear infinite;
+			font-size: 30px;
+		}
+}
 	</style>
 </head>
 
 <body>
+<!-- 随机移动图片 -->
+<div id="float_img" style="position:absolute; left:200px; top:150px;">
+<img src="/images/float.jpg" width="70" height="75" />
+</div>
+
 <p>你好</p>
 <p>....</p>
+<td>xxxx：</td>
+<td>
+<div id="interval_time"></div>
+<script type="text/javascript">
+function interval_time_count(){
+	let meet_time_ms = new Date('2020/12/24 20:21:00');
+	let current_time_ms = new Date();
+	let interval_time_ms = current_time_ms - meet_time_ms;
+	let days = Math.floor(interval_time_ms / (24 * 3600 * 1000));
+	let leavel = interval_time_ms % (24 * 3600 * 1000);
+	let hours = Math.floor(leavel / (3600 * 1000));
+	let leavel2 = leavel % (3600 * 1000);
+	let minutes = Math.floor(leavel2 / (60 * 1000));
+	let leavel3 = leavel2 % (60 * 1000);
+	let second = parseInt(leavel3 / 1000);
+	return (days + "天" + hours + "时" + minutes + "分" + second +"秒");
+}
+function interval_run(){
+	document.getElementById("interval_time").innerHTML=interval_time_count()
+}
+setInterval(interval_run, 1000);
+
+function changePostion () {
+	let divTag = document.getElementById("float_img");
+	let x=Math.random() * 500;
+	let y=Math.random() * 400;
+	divTag.style.left=x+"px";
+	divTag.style.top= y+"px";
+}
+setInterval(changePostion, 3000);
+</script>
+</td>
 </body>
 
 </html>
