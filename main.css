@@ -1,5 +1,6 @@
 #main-content {
-  font-size: 36px;
-  font-weight: bold;
-  padding: 16px;
+    margin-top: 80px;
+    background: #efefef;
+    background-image: url(/images/black_ground.jpeg);
+    background-size:100%;
 }
