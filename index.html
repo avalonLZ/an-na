@@ -3,8 +3,8 @@
 
 <head>
     <title>an-na</title>
-	<!-- 背景图铺满屏幕 -->
 	<style type="text/css">
+		<!-- 背景图铺满屏幕 -->
         * {
             padding: 0;
             margin: 0;
@@ -25,10 +25,11 @@
             height: 100%;
         }
 
+		<!-- 艺术字体 -->
 		#interval_time-reflect-base{
-    color: palegreen;
-    -webkit-box-reflect:below 10px;
-}
+			color: palegreen;
+			-webkit-box-reflect:below 10px;
+		}
 		#interval_time {
 			width: 300px;
 			height: 200px;
@@ -51,9 +52,10 @@
 
 <p>你好</p>
 <p>....</p>
-<td>xxxx：</td>
+<p>xxxx：</p>
 <td>
 <div id="interval_time"></div>
+
 <script type="text/javascript">
 function interval_time_count(){
 	let meet_time_ms = new Date('2020/12/24 20:21:00');
@@ -75,8 +77,8 @@ setInterval(interval_run, 1000);
 
 function changePostion () {
 	let divTag = document.getElementById("float_img");
-	let x=Math.random() * 500;
-	let y=Math.random() * 400;
+	let x=Math.random() * 800;
+	let y=Math.random() * 700;
 	divTag.style.left=x+"px";
 	divTag.style.top= y+"px";
 }
