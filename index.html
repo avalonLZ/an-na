@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>an-na</title>
+    <style type="text/css">
+        /* 背景图铺满屏幕 */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            background: #ebebeb;
+            background-image: url(/images/black.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 随机移动图片 -->
+<div id="float_img" style="position:absolute; left:200px; top:150px;">
+<img src="/images/float.jpg" width="67" height="69" />
+</div>
+<script type="text/javascript">
+function changePostion () {
+    let divTag = document.getElementById("float_img");
+    let x=Math.random() * 800;
+    let y=Math.random() * 700;
+    divTag.style.left=x+"px";
+    divTag.style.top= y+"px";
+}
+setInterval(changePostion, 3000);
+</script>
+<audio id="bgmMusic" src="/audio/song.mp3" autoplay="autoplay" loop="loop" preload="auto" type="audio/mp3"></audio>
+</body>
+
+</html>
